@@ -1,42 +1,42 @@
-import {
+import * as path from "path";
+import type {
   Context,
-  FileContentWriter,
-  ReportBase,
   ReportNode,
   Visitor,
-} from 'istanbul-lib-report';
-import { FileOptions, ProjectOptions } from 'istanbul-reports';
-import * as path from 'path';
+  FileContentWriter,
+} from "istanbul-lib-report";
+import { default as libReport } from "istanbul-lib-report";
+import type { FileOptions, ProjectOptions } from "istanbul-reports";
 
 export type RelativePathsJsonReportOptions = Partial<
   FileOptions & ProjectOptions
 >;
 
 export default class RelativePathsJsonReport
-  extends ReportBase
+  extends libReport.ReportBase
   implements Partial<Visitor<ReportNode>>
 {
   private file: string;
   private projectRoot: string;
   private first: boolean;
-  private contentWriter: FileContentWriter;
+  private contentWriter!: FileContentWriter;
 
   constructor(opts: RelativePathsJsonReportOptions) {
     super();
 
-    this.file = opts.file || 'coverage-final.json';
+    this.file = opts.file || "coverage-final.json";
     this.projectRoot = opts.projectRoot || process.cwd();
     this.first = true;
   }
 
-  onStart(root: ReportNode, context: Context) {
+  onStart(root: ReportNode, context: Context): void {
     this.contentWriter = context.writer.writeFile(
-      this.file
+      this.file,
     ) as FileContentWriter;
-    this.contentWriter.write('{');
+    this.contentWriter.write("{");
   }
 
-  onDetail(node: ReportNode) {
+  onDetail(node: ReportNode): void {
     const fc = node.getFileCoverage();
 
     const key = path.relative(this.projectRoot, fc.path);
@@ -47,17 +47,17 @@ export default class RelativePathsJsonReport
     if (this.first) {
       this.first = false;
     } else {
-      cw.write(',');
+      cw.write(",");
     }
     cw.write(JSON.stringify(key));
-    cw.write(': ');
+    cw.write(": ");
     cw.write(JSON.stringify(fc));
-    cw.println('');
+    cw.println("");
   }
 
-  onEnd() {
+  onEnd(): void {
     const cw = this.contentWriter;
-    cw.println('}');
+    cw.println("}");
     cw.close();
   }
 }
