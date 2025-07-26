@@ -24,7 +24,9 @@ Add the reporter to [`coverageReporters`](https://jestjs.io/docs/configuration#c
 // workspace-level jest.config.ts
 /** @type {import('jest').Config} */
 const config = {
-  coverageReporters: [['relative-paths-istanbul-json-report', { projectRoot: monorepoRoot }]],
+  coverageReporters: [
+    ["relative-paths-istanbul-json-report", { projectRoot: monorepoRoot }],
+  ],
 };
 
 module.exports = config;
@@ -36,14 +38,13 @@ Add the reporter to [`coverage.reporter`](https://vitest.dev/config/#coverage-re
 
 ```ts
 // vitest.config.ts
-import { defineConfig } from 'vitest/config';
+import { defineConfig } from "vitest/config";
 
 export default defineConfig({
   test: {
     coverage: {
       reporter: [
-        // @ts-expect-error types assume only builtin istanbul reporters will be used, see https://github.com/vitest-dev/vitest/issues/4150
-        ['relative-paths-istanbul-json-report', { projectRoot: monorepoRoot }],
+        ["relative-paths-istanbul-json-report", { projectRoot: monorepoRoot }],
       ],
     },
   },
@@ -52,11 +53,11 @@ export default defineConfig({
 
 ## Building
 
-Run `nx build relative-paths-istanbul-json-report` to build the library.
+Run `pnpm run build` to build the library.
 
 ## Running unit tests
 
-Run `nx test relative-paths-istanbul-json-report` to execute the unit tests.
+Run `pnpm run test` to execute the unit tests.
 
 ## License
 
