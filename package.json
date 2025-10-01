@@ -46,10 +46,10 @@
     "changelogithub": "^13.16.0",
     "istanbul-lib-coverage": "^3.2.2",
     "oxlint": "^1.8.0",
-    "pkg-pr-new": "^0.0.54",
+    "pkg-pr-new": "^0.0.60",
     "prettier": "^3.6.2",
     "tmp": "^0.2.3",
-    "tsdown": "^0.13.0",
+    "tsdown": "^0.15.6",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4"
   },
