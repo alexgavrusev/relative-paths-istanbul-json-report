@@ -5,9 +5,7 @@ export default defineConfig({
   platform: "node",
   format: ["cjs", "esm"],
   exports: true,
-  dts: {
-    isolatedDeclarations: true,
-  },
+  dts: true,
   sourcemap: true,
   unbundle: true,
 });
