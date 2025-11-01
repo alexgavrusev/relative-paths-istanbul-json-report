@@ -51,7 +51,7 @@
     "tmp": "^0.2.3",
     "tsdown": "^0.15.6",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.4"
+    "vitest": "^4.0.6"
   },
   "dependencies": {
     "istanbul-lib-report": "^3.0.1",
