@@ -46,7 +46,7 @@
     "changelogithub": "^14.0.0",
     "istanbul-lib-coverage": "^3.2.2",
     "oxlint": "^1.8.0",
-    "pkg-pr-new": "^0.0.62",
+    "pkg-pr-new": "^0.0.65",
     "prettier": "^3.6.2",
     "tmp": "^0.2.3",
     "tsdown": "^0.20.1",
