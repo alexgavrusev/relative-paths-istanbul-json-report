@@ -1,16 +1,9 @@
 import * as path from "path";
-import type {
-  Context,
-  ReportNode,
-  Visitor,
-  FileContentWriter,
-} from "istanbul-lib-report";
+import type { Context, ReportNode, Visitor, FileContentWriter } from "istanbul-lib-report";
 import { default as libReport } from "istanbul-lib-report";
 import type { FileOptions, ProjectOptions } from "istanbul-reports";
 
-export type RelativePathsJsonReportOptions = Partial<
-  FileOptions & ProjectOptions
->;
+export type RelativePathsJsonReportOptions = Partial<FileOptions & ProjectOptions>;
 
 export default class RelativePathsJsonReport
   extends libReport.ReportBase
@@ -30,9 +23,7 @@ export default class RelativePathsJsonReport
   }
 
   onStart(root: ReportNode, context: Context): void {
-    this.contentWriter = context.writer.writeFile(
-      this.file,
-    ) as FileContentWriter;
+    this.contentWriter = context.writer.writeFile(this.file) as FileContentWriter;
     this.contentWriter.write("{");
   }
 

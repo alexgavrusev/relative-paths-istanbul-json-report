@@ -24,9 +24,7 @@ Add the reporter to [`coverageReporters`](https://jestjs.io/docs/configuration#c
 // workspace-level jest.config.ts
 /** @type {import('jest').Config} */
 const config = {
-  coverageReporters: [
-    ["relative-paths-istanbul-json-report", { projectRoot: monorepoRoot }],
-  ],
+  coverageReporters: [["relative-paths-istanbul-json-report", { projectRoot: monorepoRoot }]],
 };
 
 module.exports = config;
@@ -43,9 +41,7 @@ import { defineConfig } from "vitest/config";
 export default defineConfig({
   test: {
     coverage: {
-      reporter: [
-        ["relative-paths-istanbul-json-report", { projectRoot: monorepoRoot }],
-      ],
+      reporter: [["relative-paths-istanbul-json-report", { projectRoot: monorepoRoot }]],
     },
   },
 });

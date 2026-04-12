@@ -10,8 +10,7 @@ import RelativePathsJsonReport from "./relative-paths-istanbul-json-report";
 
 describe("RelativePathsJsonReport", () => {
   it("should output correct json", async () => {
-    const readJSON = async (path: string) =>
-      JSON.parse(await readFile(path, "utf-8"));
+    const readJSON = async (path: string) => JSON.parse(await readFile(path, "utf-8"));
 
     const fixtureMap = await readJSON(
       resolve(import.meta.dirname, "__fixtures__", "github-649.json"),
