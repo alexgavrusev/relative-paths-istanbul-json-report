@@ -31,9 +31,11 @@
     "build": "tsdown",
     "dev": "tsdown --watch",
     "test": "vitest",
+    "typecheck": "tsc --noEmit",
     "lint": "oxlint --deny-warnings",
     "lint:fix": "pnpm run lint --fix",
-    "format": "oxfmt",
+    "format:write": "oxfmt .",
+    "format:check": "oxfmt --check .",
     "release": "bumpp && pnpm publish",
     "prepublishOnly": "pnpm run build"
   },
