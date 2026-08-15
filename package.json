@@ -36,7 +36,7 @@
     "lint:fix": "pnpm run lint --fix",
     "format:write": "oxfmt .",
     "format:check": "oxfmt --check .",
-    "release": "bumpp && pnpm publish",
+    "release": "bumpp",
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
