@@ -52,13 +52,13 @@
     "bumpp": "^12.1.1",
     "changelogithub": "^15.0.4",
     "istanbul-lib-coverage": "^3.2.2",
-    "oxfmt": "^0.65.0",
+    "oxfmt": "^0.70.0",
     "oxlint": "^1.8.0",
     "pkg-pr-new": "^0.0.88",
     "tmp": "^0.2.3",
-    "tsdown": "^0.22.14",
+    "tsdown": "^0.23.0",
     "typescript": "^7.0.2",
-    "vitest": "^4.0.6"
+    "vitest": "^5.0.2"
   },
   "packageManager": "pnpm@12.3.4"
 }
